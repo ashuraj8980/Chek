@@ -1,286 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RealMeet | Verified Connections Delhi NCR</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #fdfeff; }
+<div style="text-align: center; margin-top: 50px;">
+    <button id="fast-pay-button" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-size: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;">
+        Pay Now
+    </button>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById('fast-pay-button').onclick = function(e) {
+    var options = {
+        "key": "APNI_TEST_KEY_YAHAN_DALEIN", // 👈 Yahan apni rzp_test_... wali ID paste karein
+        "amount": "10000", // Amount paise mein (10000 = ₹100)
+        "currency": "INR",
+        "name": "RealMeet",
+        "description": "Fast Connection Payment",
         
-        .sliding-banner {
-            white-space: nowrap; overflow: hidden;
-            background: #000; color: #fff; padding: 8px 0;
-            font-size: 11px; font-weight: 600; letter-spacing: 1px;
+        // Yeh section magic hai: Isse details nahi mangi jayengi
+        "prefill": {
+            "name": "Customer",
+            "email": "customer@example.com",
+            "contact": "9999999999"
+        },
+        
+        // Isse direct UPI options ko priority milegi
+        "config": {
+            "display": {
+                "blocks": {
+                    "banks": {
+                        "name": "Quick Pay",
+                        "instruments": [
+                            { "method": "upi" }
+                        ]
+                    }
+                },
+                "sequence": ["block.banks"],
+                "preferences": { "show_default_blocks": true }
+            }
+        },
+        
+        "theme": {
+            "color": "#2ecc71"
+        },
+        
+        "handler": function (response) {
+            // Payment success hone par ye message dikhega
+            alert("Payment Successful! ID: " + response.razorpay_payment_id);
+            // Agar aap user ko kisi page par bhejba chahte hain toh niche wali line ko use karein:
+            // window.location.href = "success.html";
         }
-        .banner-text { display: inline-block; animation: slide 20s linear infinite; }
-        @keyframes slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    };
 
-        .review-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        @media (min-width: 768px) { .review-grid { grid-template-columns: 1fr 1fr; } }
-
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(236, 72, 153, 0.1); }
-        .profile-img-container { position: relative; overflow: hidden; border-radius: 20px; background: #eee; height: 192px; }
-        .verified-badge { position: absolute; top: 10px; right: 10px; background: #22c55e; color: white; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: bold; z-index: 5; }
-        .tg-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-    </style>
-</head>
-<body>
-
-    <a href="https://t.me/Xnehhaa" target="_blank" class="tg-float bg-[#0088cc] text-white p-4 rounded-full shadow-2xl flex items-center gap-2">
-        <i class="fab fa-telegram-plane text-2xl"></i>
-        <span class="font-bold text-sm">Support</span>
-    </a>
-
-    <div class="bg-gray-100 py-2 text-center text-[10px] font-bold text-gray-500 uppercase tracking-widest border-b">
-        <i class="fas fa-shield-alt text-green-500 mr-1"></i> 100% Privacy Protected & Secure Agency
-    </div>
-
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-9 h-9 bg-gradient-to-tr from-pink-600 to-rose-400 rounded-xl flex items-center justify-center text-white font-bold shadow-lg">R</div>
-                <h1 class="text-2xl font-black italic tracking-tighter">Real<span class="text-pink-600">Meet</span></h1>
-            </div>
-            <div class="flex items-center space-x-4">
-                <div class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold border border-green-100">
-                    <i class="fas fa-users mr-1"></i> 2000+ SATISFIED CUSTOMERS
-                </div>
-            </div>
-        </nav>
-        <div class="sliding-banner">
-            <div class="banner-text">
-                ✨ 100% GENUINE PROFILES ONLY • NO FAKE ACCOUNTS • INSTANT CALL AFTER PAYMENT • TRUSTED BY 2000+ MEMBERS • BOOK NOW ✨
-            </div>
-        </div>
-    </header>
-
-    <main id="page-home" class="container mx-auto px-4 py-10">
-        <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
-            <div class="glass-card p-4 rounded-2xl flex items-center shadow-sm border border-indigo-100">
-                <i class="fas fa-medal text-indigo-500 text-2xl mr-4"></i>
-                <div>
-                    <p class="text-sm font-bold">Top Verified Network</p>
-                    <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">ISO Certified Agency</p>
-                </div>
-            </div>
-            <div class="glass-card p-4 rounded-2xl flex items-center shadow-sm border border-pink-100">
-                <i class="fas fa-user-shield text-pink-500 text-2xl mr-4"></i>
-                <div>
-                    <p class="text-sm font-bold">Privacy Guaranteed</p>
-                    <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">100% Secure Data</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-10 text-center">
-            <h2 class="text-3xl font-black text-gray-800 tracking-tight">Verified Real Profiles</h2>
-            <p class="text-gray-400 text-sm mt-1">Hand-picked and photo-verified individuals across Delhi NCR</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="profile-grid"></div>
-
-        <section class="mt-24 max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-10 text-center md:text-left">
-                <div>
-                    <h3 class="text-xl font-black italic">Client <span class="text-pink-600">Testimonials</span></h3>
-                    <div class="flex justify-center md:justify-start mt-2 text-yellow-400 text-xs">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <span class="ml-2 text-gray-500 font-bold">4.9/5 (Based on 65+ Real Reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 shadow-inner">
-                <div class="review-grid" id="review-list"></div>
-            </div>
-        </section>
-    </main>
-
-    <main id="page-detail" class="container mx-auto px-4 py-8 hidden">
-        <div class="max-w-4xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
-            <button onclick="showPage('home')" class="m-6 bg-gray-100 p-3 rounded-full hover:bg-pink-100 transition"><i class="fas fa-arrow-left"></i></button>
-            <div class="md:flex p-8 pt-0">
-                <div class="md:w-1/2 rounded-[30px] overflow-hidden shadow-xl">
-                    <img id="det-img" src="" class="w-full h-[450px] object-cover bg-gray-200">
-                </div>
-                <div class="md:w-1/2 md:pl-12 flex flex-col justify-center">
-                    <div class="flex items-center text-green-600 font-bold text-xs mb-2">
-                        <i class="fas fa-shield-check mr-2"></i> ID VERIFIED MEMBER
-                    </div>
-                    <h2 id="det-name" class="text-4xl font-black mb-1"></h2>
-                    <p id="det-location" class="text-pink-600 font-bold mb-6 italic"></p>
-                    <p id="det-bio" class="text-gray-500 leading-relaxed mb-8 bg-pink-50/50 p-4 rounded-2xl italic"></p>
-                    
-                    <div class="bg-gray-50 p-5 rounded-2xl mb-8 border border-gray-200">
-                        <h4 class="font-bold text-sm mb-3 text-pink-600 uppercase tracking-widest">Session Benefits:</h4>
-                        <ul class="text-xs space-y-2 text-gray-600">
-                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 25-30 Minute Call Duration</li>
-                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Discuss meeting time, venue & preferences</li>
-                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <strong>Instant Connect:</strong> Get number within 5 mins</li>
-                        </ul>
-                    </div>
-
-                    <div class="border-t pt-6">
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="text-gray-400 font-bold">BOOKING FEE</span>
-                            <span class="text-2xl font-black">₹100</span>
-                        </div>
-                        <button onclick="showPage('checkout')" class="w-full bg-black text-white py-5 rounded-2xl font-bold text-lg hover:scale-[1.02] transition shadow-xl">BOOK CALL SESSION</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <main id="page-checkout" class="container mx-auto px-4 py-12 hidden">
-        <div class="max-w-md mx-auto bg-white rounded-[35px] shadow-2xl p-8 border border-gray-50">
-            <form id="checkout-form-box" action="https://formspree.io/f/xvgzgeoy" method="POST" onsubmit="return handleForm(event)">
-                <h3 class="text-2xl font-black mb-6 text-center">Confirm Details</h3>
-                <div class="space-y-4">
-                    <input type="text" name="Name" required placeholder="Full Name" class="w-full p-4 bg-gray-50 rounded-2xl outline-none border-none font-semibold">
-                    <input type="text" name="Location" required placeholder="Your Area (Delhi NCR)" class="w-full p-4 bg-gray-50 rounded-2xl outline-none border-none font-semibold">
-                    <input type="tel" name="WhatsApp" required placeholder="WhatsApp Number" class="w-full p-4 bg-gray-50 rounded-2xl outline-none border-none font-semibold">
-                    <input type="hidden" name="_replyto" value="ashukumar8076801908@gmail.com">
-                    <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-rose-500 text-white py-5 rounded-2xl font-bold mt-4 shadow-lg uppercase">Proceed to Payment ₹100</button>
-                </div>
-            </form>
-
-            <div id="payment-gate" class="hidden">
-                <div class="text-center mb-6">
-                    <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                        <i class="fas fa-shield-check text-green-600 text-xl"></i>
-                    </div>
-                    <h4 class="text-xl font-black">Secure Verification</h4>
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Fully Refundable Deposit</p>
-                </div>
-
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 mb-6">
-                    <h5 class="text-xs font-bold text-blue-800 mb-2">Why we charge ₹100?</h5>
-                    <ul class="text-[10px] text-blue-700 space-y-1 leading-tight">
-                        <li>• <b>Filter Spammers:</b> To block fake profiles and time-wasters.</li>
-                        <li>• <b>Genuine Connect:</b> To ensure only serious members get access.</li>
-                        <li>• <b>Instant Service:</b> Your booking is confirmed immediately after payment.</li>
-                    </ul>
-                </div>
-
-                <div class="relative bg-white border-2 border-dashed border-gray-200 rounded-[30px] p-6 text-center">
-                    <img id="qr-img" src="qrcode.jpg" class="mx-auto w-44 h-44 rounded-xl mb-4 border" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ScanToPay100'">
-                    <p class="text-[11px] font-bold text-gray-500">Scan QR to pay ₹100 via UPI</p>
-                </div>
-
-                <div class="mt-6 space-y-2">
-                    <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
-                        <i class="fas fa-check-circle text-green-500 text-sm"></i>
-                        <p class="text-[10px] font-bold text-gray-600">Connect within 5 minutes of payment.</p>
-                    </div>
-                    <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
-                        <i class="fas fa-info-circle text-pink-500 text-sm"></i>
-                        <p class="text-[10px] font-bold text-gray-600">Full refund if call is not connected.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="mt-20 py-10 bg-gray-900 text-white text-center">
-        <h4 class="text-xl font-black italic mb-2">Real<span class="text-pink-600">Meet</span></h4>
-        <p class="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">© 2025 RealMeet Network • Trusted Agency Delhi NCR</p>
-    </footer>
-
-    <script>
-        const profiles = [
-            { id: 1, name: "Kavya", age: 23, loc: "Noida Sector 62", bio: "Working in the IT sector. I'm simple, fun-loving, and enjoy meaningful conversations.", img: "pic1.jpg" },
-            { id: 2, name: "Sneha", age: 24, loc: "South Delhi", bio: "A fashion student who loves meeting new people. Let's start with a nice talk.", img: "pic2.jpg" },
-            { id: 3, name: "Riya", age: 22, loc: "Gurgaon Phase 3", bio: "College student looking to enjoy life. I appreciate respectful people.", img: "pic3.jpg" },
-            { id: 4, name: "Ishita", age: 25, loc: "Dwarka Sec 10", bio: "Taking a break from work. I am very friendly and easy to talk to over calls.", img: "pic4.jpg" },
-            { id: 5, name: "Mehak", age: 26, loc: "Janakpuri, Delhi", bio: "Independent makeup artist. I love traveling and exploring new places.", img: "pic5.jpg" },
-            { id: 6, name: "Tanya", age: 23, loc: "Greater Kailash", bio: "Living the South Delhi vibe. I love long drives and music. Let's connect.", img: "pic6.jpg" },
-            { id: 7, name: "Priya", age: 24, loc: "Noida Sec 18", bio: "A simple girl from Noida. Looking for respectful and genuine people.", img: "pic7.jpg" },
-            { id: 8, name: "Ananya", age: 22, loc: "Rohini, Delhi", bio: "Always happy and friendly. I balance my studies with a bit of fun.", img: "pic8.jpg" },
-            { id: 9, name: "Zoya", age: 25, loc: "Indirapuram", bio: "Creative mind who loves making new connections. I value my privacy.", img: "pic9.jpg" },
-            { id: 10, name: "Neha", age: 24, loc: "Vasant Kunj", bio: "Corporate professional who loves to chill. I prefer honest conversations.", img: "pic10.jpg" },
-            { id: 11, name: "Sanya", age: 23, loc: "Connaught Place", bio: "A true Delhi girl. Foodie who loves exploring the heart of the city.", img: "pic11.jpg" },
-            { id: 12, name: "Kriti", age: 22, loc: "Ghaziabad Central", bio: "Soft-spoken and a very good listener. Let's discuss over a call.", img: "pic12.jpg" },
-            { id: 13, name: "Bhumika", age: 26, loc: "Faridabad Sec 15", bio: "Bold and independent. I enjoy meeting like-minded individuals.", img: "pic13.jpg" },
-            { id: 14, name: "Simran", age: 24, loc: "Lajpat Nagar", bio: "Fashion and movies define my life. I am very open-minded.", img: "pic14.jpg" },
-            { id: 15, name: "Muskan", age: 23, loc: "Paschim Vihar", bio: "Always wearing a smile. Looking forward to a respectful connection.", img: "pic15.jpg" },
-            { id: 16, name: "Aavya", age: 24, loc: "Gurgaon Sector 44", bio: "Professional dancer. I love deep conversations and exploring NCR.", img: "pic16.jpg" },
-            { id: 17, name: "Kiara", age: 22, loc: "Saket, Delhi", bio: "Design student with a passion for art. Looking for interesting calls.", img: "pic17.jpg" },
-            { id: 18, name: "Myra", age: 25, loc: "Noida Expressway", bio: "Working in hospitality. I know how to make people feel comfortable.", img: "pic18.jpg" },
-            { id: 19, name: "Tanvi", age: 23, loc: "Cyber City, Gurgaon", bio: "Techie by day and dreamer by night. Very easy-going nature.", img: "pic19.jpg" },
-            { id: 20, name: "Suhani", age: 24, loc: "Faridabad NIT", bio: "Down to earth and traditional. I love talking about life goals.", img: "pic20.jpg" }
-        ];
-
-        const reviews = [
-            { name: "Rahul S.", text: "Genuine service. Connected with Kavya instantly after the payment. Recommended!" },
-            { name: "Vikram", text: "Trusted platform. The process is very smooth and professional." },
-            { name: "Amit K.", text: "Best agency in Delhi NCR. Profiles are 100% verified." },
-            { name: "Sameer", text: "No time-pass here. Only serious profiles. Great experience." },
-            { name: "Sunny V.", text: "Fast activation. I got the contact details within 3 minutes." },
-            { name: "Sahil", text: "Finally a real agency. Very happy with the support team." },
-            { name: "Deepak R.", text: "Safe and secure. They really care about privacy." },
-            { name: "Karan", text: "Smooth booking. The session was worth every penny." }
-        ];
-
-        function initData() {
-            const grid = document.getElementById('profile-grid');
-            grid.innerHTML = ""; 
-            profiles.forEach(p => {
-                grid.innerHTML += `
-                    <div class="glass-card rounded-[25px] overflow-hidden cursor-pointer shadow-sm" onclick="openProfile(${p.id})">
-                        <div class="profile-img-container">
-                            <span class="verified-badge"><i class="fas fa-check"></i> VERIFIED</span>
-                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/300x400?text=${p.name}'">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="font-bold text-sm text-gray-800">${p.name}, ${p.age}</h4>
-                            <p class="text-[10px] text-pink-500 font-bold mb-3 uppercase tracking-wider">${p.loc}</p>
-                            <button class="w-full py-2 bg-pink-50 text-pink-600 rounded-xl text-[10px] font-black uppercase">View Profile</button>
-                        </div>
-                    </div>`;
-            });
-
-            const rList = document.getElementById('review-list');
-            rList.innerHTML = "";
-            reviews.forEach(r => {
-                rList.innerHTML += `
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-                        <div class="flex text-yellow-400 text-[10px] mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-xs text-gray-600 italic">"${r.text}"</p>
-                        <p class="text-[10px] font-bold mt-3 text-gray-400 uppercase tracking-tighter">— ${r.name} (Verified)</p>
-                    </div>`;
-            });
-        }
-
-        function showPage(pageId) {
-            document.getElementById('page-home').classList.add('hidden');
-            document.getElementById('page-detail').classList.add('hidden');
-            document.getElementById('page-checkout').classList.add('hidden');
-            document.getElementById('page-' + pageId).classList.remove('hidden');
-            window.scrollTo(0,0);
-        }
-
-        function openProfile(id) {
-            const p = profiles.find(x => x.id === id);
-            document.getElementById('det-img').src = p.img;
-            document.getElementById('det-name').innerText = p.name + ", " + p.age;
-            document.getElementById('det-location').innerText = p.loc + ", Delhi NCR";
-            document.getElementById('det-bio').innerText = p.bio;
-            showPage('detail');
-        }
-
-        function handleForm(e) {
-            e.preventDefault();
-            fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
-            document.getElementById('checkout-form-box').classList.add('hidden');
-            document.getElementById('payment-gate').classList.remove('hidden');
-            return false;
-        }
-
-        window.onload = initData;
-    </script>
-</body>
-</html>
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+};
+</script>
