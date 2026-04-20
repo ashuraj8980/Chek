@@ -1,5 +1,5 @@
-<div style="text-align: center; margin-top: 50px;">
-    <button id="fast-pay-button" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-size: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;">
+<div style="text-align: center; margin-top: 20px;">
+    <button id="direct-pay-now" style="background: #3399cc; color: #fff; padding: 12px 25px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-weight: 600;">
         Pay Now
     </button>
 </div>
@@ -7,51 +7,30 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
-document.getElementById('fast-pay-button').onclick = function(e) {
-    var options = {
-        "key": "APNI_TEST_KEY_YAHAN_DALEIN", // 👈 Yahan apni rzp_test_... wali ID paste karein
-        "amount": "10000", // Amount paise mein (10000 = ₹100)
-        "currency": "INR",
-        "name": "RealMeet",
-        "description": "Fast Connection Payment",
-        
-        // Yeh section magic hai: Isse details nahi mangi jayengi
-        "prefill": {
-            "name": "Customer",
-            "email": "customer@example.com",
-            "contact": "9999999999"
-        },
-        
-        // Isse direct UPI options ko priority milegi
-        "config": {
-            "display": {
-                "blocks": {
-                    "banks": {
-                        "name": "Quick Pay",
-                        "instruments": [
-                            { "method": "upi" }
-                        ]
-                    }
-                },
-                "sequence": ["block.banks"],
-                "preferences": { "show_default_blocks": true }
+    document.getElementById('direct-pay-now').onclick = function(e) {
+        var options = {
+            "key": "YOUR_KEY_ID_HERE", // 👈 Yahan apni API Key dalein (rzp_test_...)
+            "amount": "10000", // Amount paise mein (10000 = ₹100)
+            "currency": "INR",
+            "name": "RealMeet",
+            "description": "Fast Payment",
+            
+            // Ye part details mangna band kar dega (Skip Step)
+            "prefill": {
+                "name": "Customer", 
+                "email": "customer@example.com",
+                "contact": "9999999999"
+            },
+            
+            "theme": { "color": "#3399cc" },
+            
+            "handler": function (response) {
+                alert("Payment Successful! ID: " + response.razorpay_payment_id);
             }
-        },
-        
-        "theme": {
-            "color": "#2ecc71"
-        },
-        
-        "handler": function (response) {
-            // Payment success hone par ye message dikhega
-            alert("Payment Successful! ID: " + response.razorpay_payment_id);
-            // Agar aap user ko kisi page par bhejba chahte hain toh niche wali line ko use karein:
-            // window.location.href = "success.html";
-        }
-    };
+        };
 
-    var rzp1 = new Razorpay(options);
-    rzp1.open();
-    e.preventDefault();
-};
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+    };
 </script>
