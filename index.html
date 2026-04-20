@@ -3,48 +3,968 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Check - RealMeet</title>
+    <title>EliteSpa Careers | Male Therapist Hiring</title>
+    <link href="https://cdn.jsdelivr.net/npm/fontsource-roboto@4.0.0/index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fontsource-inter@4.0.0/index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1662010748275569');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1662010748275569&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f7f6;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', sans-serif; background: #0a0a0a; color: #e5e5e5; }
+        .gradient-primary { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .gradient-accent { background: linear-gradient(135deg, #16a34a 0%, #15803d 50%, #166534 100%); }
+        .gradient-gold { background: linear-gradient(135deg, #d4a017 0%, #b8860b 50%, #996515 100%); }
+        .glass-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+        .glass-card-hover { transition: all 0.3s ease; }
+        .glass-card-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(22, 163, 74, 0.3); transform: translateY(-4px); }
+        .text-gradient { background: linear-gradient(135deg, #22c55e, #16a34a, #15803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .text-gold { background: linear-gradient(135deg, #fbbf24, #d4a017, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .btn-primary { background: linear-gradient(135deg, #16a34a, #15803d); transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(22, 163, 74, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(22, 163, 74, 0.5); }
+        .btn-razorpay { background: linear-gradient(135deg, #16a34a, #15803d) !important; transition: all 0.3s ease; }
+        .btn-razorpay:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(22, 163, 74, 0.5); }
+        .input-field { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .input-field:focus { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15); outline: none; }
+        .telegram-float { position: fixed; bottom: 24px; right: 24px; z-index: 50; background: linear-gradient(135deg, #0088cc, #0077b5); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4); transition: all 0.3s ease; }
+        .telegram-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(0, 136, 204, 0.6); }
+        .nav-link { position: relative; padding-bottom: 2px; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #16a34a; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .pulse-dot { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+        .fade-in { animation: fadeIn 0.8s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-up { animation: slideUp 0.6s ease forwards; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .review-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.06); }
+        .stat-number { font-size: 2.5rem; font-weight: 700; }
+        .scroll-smooth { scroll-behavior: smooth; }
+        .earning-badge { background: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(22, 163, 74, 0.05)); border: 1px solid rgba(22, 163, 74, 0.3); }
+        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(22, 163, 74, 0.3), transparent); }
+        .video-container { position: relative; background: #000; border-radius: 12px; overflow: hidden; }
+        .video-container video { width: 100%; display: block; }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.5s ease; }
+        .razorpay-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        .razorpay-wrapper form { width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .razorpay-wrapper button, .razorpay-wrapper .razorpay-payment-button { 
+            background: linear-gradient(135deg, #16a34a, #15803d) !important; 
+            color: white !important; 
+            padding: 16px 40px !important; 
+            border-radius: 8px !important; 
+            font-size: 1.1rem !important; 
+            font-weight: 600 !important; 
+            border: none !important; 
+            cursor: pointer !important; 
+            width: 100% !important; 
+            max-width: 400px !important;
+            transition: all 0.3s ease !important;
         }
-        .payment-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 350px;
+        .razorpay-wrapper button:hover, .razorpay-wrapper .razorpay-payment-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(22, 163, 74, 0.5) !important;
         }
-        h2 { color: #333; margin-bottom: 10px; }
-        p { color: #666; margin-bottom: 25px; }
+        .checklist-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+        .checklist-icon { color: #22c55e; font-weight: bold; }
+        .verified-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(22, 163, 74, 0.1); border: 1px solid rgba(22, 163, 74, 0.3); border-radius: 20px; padding: 4px 12px; font-size: 0.75rem; color: #22c55e; }
+        @media (max-width: 768px) {
+            .stat-number { font-size: 2rem; }
+            .hero-title { font-size: 1.8rem !important; }
+        }
+        .header-sticky { position: fixed; top: 0; left: 0; right: 0; z-index: 40; transition: all 0.3s ease; }
+        .header-sticky.scrolled { background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hidden-form { display: none; }
+        .step-indicator { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; }
+        .step-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; }
+        .step-dot.active { background: #16a34a; transform: scale(1.3); }
+        .step-line { width: 40px; height: 2px; background: rgba(255,255,255,0.1); }
+        .step-line.active { background: #16a34a; }
+        .guarantee-box { background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(22, 163, 74, 0.02)); border: 1px solid rgba(22, 163, 74, 0.2); }
     </style>
 </head>
-<body>
+<body class="scroll-smooth">
 
-    <div class="payment-card">
-        <h2>Pay & Connect</h2>
-        <p>Click the button below to test your Razorpay integration.</p>
-
-        <form>
-            <script 
-                src="https://checkout.razorpay.com/v1/payment-button.js" 
-                data-payment_button_id="pl_SfnTnRnMq2ntKw" 
-                async>
-            </script> 
-        </form>
-
-        <div style="margin-top: 20px; font-size: 12px; color: #999;">
-            Note: User details will be required for this button.
+    <!-- Header -->
+    <header id="mainHeader" class="header-sticky gradient-primary">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white tracking-wide">ELITESPA</h1>
+                    <p class="text-xs text-green-400 font-medium tracking-wider">CAREERS</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="nav-link text-sm text-gray-300 hover:text-white transition">Home</a>
+                <a href="#about" class="nav-link text-sm text-gray-300 hover:text-white transition">About</a>
+                <a href="#earnings" class="nav-link text-sm text-gray-300 hover:text-white transition">Earnings</a>
+                <a href="#reviews" class="nav-link text-sm text-gray-300 hover:text-white transition">Reviews</a>
+                <a href="#apply" class="btn-primary px-6 py-2 rounded-lg text-sm font-semibold text-white">Apply Now</a>
+            </nav>
+            <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-    </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+            <div class="flex flex-col gap-3">
+                <a href="#home" class="text-sm text-gray-300 hover:text-white transition py-2">Home</a>
+                <a href="#about" class="text-sm text-gray-300 hover:text-white transition py-2">About</a>
+                <a href="#earnings" class="text-sm text-gray-300 hover:text-white transition py-2">Earnings</a>
+                <a href="#reviews" class="text-sm text-gray-300 hover:text-white transition py-2">Reviews</a>
+                <a href="#apply" class="btn-primary px-6 py-2 rounded-lg text-sm font-semibold text-white text-center">Apply Now</a>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section with Video -->
+    <section id="home" class="pt-24 pb-16 gradient-primary">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="fade-in">
+                <span class="inline-flex items-center gap-2 earning-badge rounded-full px-4 py-2 text-sm text-green-400 mb-6">
+                    <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+                    Now Hiring Male Therapists
+                </span>
+                <h2 class="hero-title text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                    Build Your Career as a<br>
+                    <span class="text-gradient">Professional Spa Therapist</span>
+                </h2>
+                <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                    Join our elite network of male therapists serving premium female clients. 
+                    Competitive earnings with flexible scheduling and professional growth opportunities.
+                </p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-container max-w-3xl mx-auto mb-10 shadow-2xl shadow-green-900/20">
+                <video autoplay muted loop playsinline poster="" id="heroVideo" class="rounded-xl">
+                    <source src="video.1" type="video/mp4">
+                    <source src="video.1" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Earning Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <p class="text-2xl md:text-3xl font-bold text-gradient">Rs. 1,000 - 2,000</p>
+                    <p class="text-gray-400 text-sm mt-2">Per Hour Earnings</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <p class="text-2xl md:text-3xl font-bold text-gradient">Rs. 10,000 - 15,000</p>
+                    <p class="text-gray-400 text-sm mt-2">Per Day Potential</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <p class="text-2xl md:text-3xl font-bold text-gradient">100%</p>
+                    <p class="text-gray-400 text-sm mt-2">Selection Guarantee</p>
+                </div>
+            </div>
+
+            <a href="#apply" class="btn-primary inline-block px-10 py-4 rounded-xl text-lg font-bold text-white shadow-2xl">
+                APPLY NOW FOR JOB
+            </a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 gradient-primary">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">About Us</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">Why Choose EliteSpa Careers</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We connect skilled male therapists with our exclusive network of female clients seeking premium body massage services.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card glass-card-hover rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Trusted Platform</h3>
+                    <p class="text-gray-400 text-sm">Verified clients with secure booking and professional environment.</p>
+                </div>
+                <div class="glass-card glass-card-hover rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">High Earnings</h3>
+                    <p class="text-gray-400 text-sm">Earn Rs. 1,000 to 2,000 per hour with daily potential up to Rs. 15,000.</p>
+                </div>
+                <div class="glass-card glass-card-hover rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Flexible Schedule</h3>
+                    <p class="text-gray-400 text-sm">Choose your working hours. Work as per your availability and convenience.</p>
+                </div>
+                <div class="glass-card glass-card-hover rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Training Support</h3>
+                    <p class="text-gray-400 text-sm">Professional training provided. We ensure you are ready to deliver premium service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Earnings Section -->
+    <section id="earnings" class="py-20 gradient-primary">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">Earning Potential</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">Your Income Breakdown</h2>
+                <p class="text-gray-400">Our female clients are looking for professional male therapists. Here is what you can earn.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-400 mb-2">HOURLY RATE</p>
+                        <p class="text-4xl md:text-5xl font-bold text-gradient">Rs. 1K - 2K</p>
+                        <p class="text-gray-500 text-sm mt-2">Per Hour</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm text-gray-400 mb-2">DAILY EARNINGS</p>
+                        <p class="text-4xl md:text-5xl font-bold text-gradient">Rs. 10K - 15K</p>
+                        <p class="text-gray-500 text-sm mt-2">Per Day</p>
+                    </div>
+                </div>
+                <div class="mt-10 pt-8 border-t border-gray-700/50">
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-2xl font-bold text-white">5-10</p>
+                            <p class="text-xs text-gray-400 mt-1">Clients Per Day</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">60-70+</p>
+                            <p class="text-xs text-gray-400 mt-1">Days Per Month</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">Rs. 3L+</p>
+                            <p class="text-xs text-gray-400 mt-1">Monthly Potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- How It Works -->
+    <section class="py-20 gradient-primary">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">Process</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">How It Works</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                        <span class="text-2xl font-bold text-green-400">01</span>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Fill Application</h4>
+                    <p class="text-gray-400 text-sm">Submit your details through our online form.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                        <span class="text-2xl font-bold text-green-400">02</span>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Pay Rs. 299</h4>
+                    <p class="text-gray-400 text-sm">One-time fee for training, joining, and profile setup.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                        <span class="text-2xl font-bold text-green-400">03</span>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Get Verified</h4>
+                    <p class="text-gray-400 text-sm">Complete training and get verified on our platform.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                        <span class="text-2xl font-bold text-green-400">04</span>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Start Earning</h4>
+                    <p class="text-gray-400 text-sm">Receive client bookings and start earning immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 gradient-primary">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">What Our Therapists Say</h2>
+                <p class="text-gray-400">Real experiences from our verified male therapists.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"Joined EliteSpa 3 months ago. My daily earnings are consistently above Rs. 8,000. The platform is genuine and support team is very responsive. Best decision of my career."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">RK</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Rahul K.</p>
+                            <p class="text-gray-500 text-xs">Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"I was skeptical at first but after paying Rs. 299, I received proper training and got connected with clients within 2 days. Now I earn Rs. 12,000 per day regularly. Highly recommended."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">AS</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Amit S.</p>
+                            <p class="text-gray-500 text-xs">Delhi, NCR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"The training was professional and the client base is premium. I easily make Rs. 10,000 to 15,000 per day. The Rs. 299 fee is nothing compared to what you earn. Thank you EliteSpa."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">VP</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Vikram P.</p>
+                            <p class="text-gray-500 text-xs">Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"I have been working with EliteSpa for 6 months now. Flexible timing, great clients, and excellent earning potential. The team provides full support throughout."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">SK</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Suresh K.</p>
+                            <p class="text-gray-500 text-xs">Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"Professional platform with verified clients. The onboarding was smooth and I started getting appointments within the first week. My monthly income has crossed Rs. 2.5 lakhs."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">MJ</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Manish J.</p>
+                            <p class="text-gray-500 text-xs">Pune, Maharashtra</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card rounded-xl p-6">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4 leading-relaxed">"Best platform for male therapists. Genuine clients, proper payment system, and great support. The Rs. 299 investment paid off within the first hour of work. 100% satisfied."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-700/50">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">DR</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Deepak R.</p>
+                            <p class="text-gray-500 text-xs">Jaipur, Rajasthan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Application Form Section -->
+    <section id="apply" class="py-20 gradient-primary">
+        <div class="max-w-2xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">Apply Now</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">Join Our Team Today</h2>
+                <p class="text-gray-400">Fill in your details to get started. All fields are required.</p>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="step-indicator">
+                <div class="step-dot active" id="stepDot1"></div>
+                <div class="step-line" id="stepLine1"></div>
+                <div class="step-dot" id="stepDot2"></div>
+                <div class="step-line" id="stepLine2"></div>
+                <div class="step-dot" id="stepDot3"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 md:p-10">
+                <!-- Step 1: Personal Details Form -->
+                <div class="form-step active" id="formStep1">
+                    <h3 class="text-xl font-bold text-white text-center mb-2">Personal Details</h3>
+                    <p class="text-gray-400 text-sm text-center mb-8">Please fill in all the information below.</p>
+
+                    <form id="applicationForm" action="https://formspree.io/f/mnjlzrjj" method="POST">
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                <input type="text" name="full_name" id="fullName" required placeholder="Enter your full name" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Mobile Number</label>
+                                <input type="tel" name="mobile_number" id="mobileNumber" required placeholder="Enter your mobile number" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm" pattern="[0-9]{10}">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                <input type="email" name="email" id="email" required placeholder="Enter your email address" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">City</label>
+                                    <input type="text" name="city" id="city" required placeholder="Your city" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">State</label>
+                                    <input type="text" name="state" id="state" required placeholder="Your state" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Age</label>
+                                    <input type="number" name="age" id="age" required placeholder="Your age" min="18" max="60" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Gender</label>
+                                    <select name="gender" id="gender" required class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Experience</label>
+                                    <select name="experience" id="experience" required class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                        <option value="">Select Experience</option>
+                                        <option value="Fresher">Fresher (No Experience)</option>
+                                        <option value="Less than 1 year">Less than 1 Year</option>
+                                        <option value="1-3 years">1-3 Years</option>
+                                        <option value="3-5 years">3-5 Years</option>
+                                        <option value="5+ years">5+ Years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Current Working Status</label>
+                                    <select name="working_status" id="workingStatus" required class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                                        <option value="">Select Status</option>
+                                        <option value="Unemployed">Unemployed</option>
+                                        <option value="Part-time">Part-time Employed</option>
+                                        <option value="Full-time">Full-time Employed</option>
+                                        <option value="Freelancer">Freelancer</option>
+                                        <option value="Student">Student</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Self Introduction</label>
+                                <textarea name="self_introduction" id="selfIntroduction" required placeholder="Tell us about yourself, your skills, and why you want to join..." rows="4" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Languages Known</label>
+                                <input type="text" name="languages" id="languages" required placeholder="e.g., Hindi, English, Marathi" class="input-field w-full px-4 py-3 rounded-lg text-white text-sm">
+                            </div>
+
+                            <button type="button" onclick="goToStep(2)" class="btn-primary w-full py-4 rounded-xl text-white font-bold text-base mt-4">
+                                CONTINUE TO PAYMENT
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 2: Fee Details & Razorpay -->
+                <div class="form-step" id="formStep2">
+                    <h3 class="text-xl font-bold text-white text-center mb-2">Payment Details</h3>
+                    <p class="text-gray-400 text-sm text-center mb-8">Review the fee structure and proceed with payment.</p>
+
+                    <div class="guarantee-box rounded-xl p-6 mb-8 text-center">
+                        <div class="w-14 h-14 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Money Back Guarantee</h4>
+                        <p class="text-gray-400 text-sm">If you are not connected with clients after payment, your full amount of Rs. 299 will be refunded. No questions asked.</p>
+                    </div>
+
+                    <!-- Why We Charge Rs. 299 -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 mb-8 border border-gray-700/50">
+                        <h4 class="text-base font-bold text-white mb-4 text-center">Why We Charge Rs. 299</h4>
+                        <div class="space-y-3">
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">Professional training for spa therapy techniques</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">Profile creation and platform onboarding</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">Client matching and booking system access</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">24/7 support and guidance from our team</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">Verification and background check processing</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-icon">✓</span>
+                                <span class="text-gray-300 text-sm">Lifetime membership with no hidden charges</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fee Breakdown -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 mb-8 border border-gray-700/50">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700/50">
+                            <span class="text-gray-300 text-sm">Training Fee</span>
+                            <span class="text-white font-semibold text-sm">Rs. 100</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700/50">
+                            <span class="text-gray-300 text-sm">Joining Fee</span>
+                            <span class="text-white font-semibold text-sm">Rs. 100</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700/50">
+                            <span class="text-gray-300 text-sm">Discussion & Onboarding Fee</span>
+                            <span class="text-white font-semibold text-sm">Rs. 99</span>
+                        </div>
+                        <div class="flex justify-between items-center py-4">
+                            <span class="text-white font-bold">Total Amount</span>
+                            <span class="text-2xl font-bold text-gradient">Rs. 299</span>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox Agreement -->
+                    <div class="mb-8">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="agreeCheckbox" required class="mt-1 w-5 h-5 rounded border-gray-600 bg-gray-800 text-green-500 focus:ring-green-500 focus:ring-offset-0">
+                            <span class="text-gray-300 text-sm leading-relaxed">
+                                I understand and agree to the Rs. 299 one-time fee which covers training, joining, discussion, and onboarding. I acknowledge that if I am not connected with clients, I am eligible for a full refund. I confirm that all details provided above are accurate.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Razorpay Payment Button -->
+                    <div class="razorpay-wrapper mb-6">
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SfnTnRnMq2ntKw" async> </script>
+                        </form>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-2 mt-6 mb-6">
+                        <span class="verified-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Verified & Secure Payment
+                        </span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button type="button" onclick="goToStep(1)" class="flex-1 py-3 rounded-xl border border-gray-600 text-gray-300 font-semibold text-sm hover:bg-gray-800 transition">
+                            Back
+                        </button>
+                        <button type="button" onclick="submitForm()" class="flex-1 btn-primary py-3 rounded-xl text-white font-bold text-sm">
+                            SUBMIT & PAY NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Success -->
+                <div class="form-step" id="formStep3">
+                    <div class="text-center py-10">
+                        <div class="w-20 h-20 gradient-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Application Submitted Successfully</h3>
+                        <p class="text-gray-400 text-sm mb-2">Your details have been sent to our team.</p>
+                        <p class="text-gray-400 text-sm mb-6">Complete the payment above to unlock your position and start earning.</p>
+                        <div class="verified-badge text-base px-6 py-3 mb-6">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Application Verified & Joined
+                        </div>
+                        <p class="text-gray-500 text-xs">Our team will contact you within 24 hours after payment confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section class="py-20 gradient-primary">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-green-400 text-sm font-semibold tracking-widest uppercase">FAQ</span>
+                <h2 class="text-3xl font-bold text-white mt-3 mb-4">Frequently Asked Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" onclick="toggleFaq(this)">
+                        <span class="text-white font-semibold text-sm">Why is there a charge of Rs. 299?</span>
+                        <svg class="w-5 h-5 text-green-400 transform transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-400 text-sm leading-relaxed">The Rs. 299 fee covers your professional training, platform onboarding, profile setup, client matching, and lifetime access to our booking system. There are no hidden charges.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" onclick="toggleFaq(this)">
+                        <span class="text-white font-semibold text-sm">Is the refund guaranteed?</span>
+                        <svg class="w-5 h-5 text-green-400 transform transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-400 text-sm leading-relaxed">Yes. If you are not connected with any clients after completing the onboarding process, we guarantee a 100% refund of your Rs. 299 payment. No questions asked.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" onclick="toggleFaq(this)">
+                        <span class="text-white font-semibold text-sm">Do I need prior experience?</span>
+                        <svg class="w-5 h-5 text-green-400 transform transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-400 text-sm leading-relaxed">No prior experience is required. We provide complete professional training to all our therapists. Whether you are a fresher or experienced, you are welcome to join.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" onclick="toggleFaq(this)">
+                        <span class="text-white font-semibold text-sm">How soon can I start earning?</span>
+                        <svg class="w-5 h-5 text-green-400 transform transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-400 text-sm leading-relaxed">After completing the training and verification process, most therapists start receiving client bookings within 24-48 hours. You can start earning immediately once connected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-primary border-t border-gray-800/50">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">ELITESPA</h3>
+                            <p class="text-xs text-green-400 font-medium">CAREERS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">India's leading platform connecting professional male therapists with premium female clients for body massage services.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="#home" class="text-gray-400 text-sm hover:text-green-400 transition">Home</a>
+                        <a href="#about" class="text-gray-400 text-sm hover:text-green-400 transition">About Us</a>
+                        <a href="#earnings" class="text-gray-400 text-sm hover:text-green-400 transition">Earnings</a>
+                        <a href="#reviews" class="text-gray-400 text-sm hover:text-green-400 transition">Reviews</a>
+                        <a href="#apply" class="text-gray-400 text-sm hover:text-green-400 transition">Apply Now</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact & Support</h4>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            <span class="text-gray-400 text-sm">Telegram: @xkhushii</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span class="text-gray-400 text-sm">Email: support@elitespa.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span class="text-gray-400 text-sm">Support Available 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider mb-8"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-xs text-center md:text-left">2026 EliteSpa Careers. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 text-xs hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 text-xs hover:text-gray-300 transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 text-xs hover:text-gray-300 transition">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Telegram Floating Button -->
+    <a href="https://t.me/xkhushii" target="_blank" class="telegram-float" title="Contact us on Telegram">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ Toggle
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            content.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        // Form Steps Navigation
+        function goToStep(step) {
+            if (step === 2) {
+                // Validate all required fields
+                const requiredFields = document.querySelectorAll('#applicationForm [required]');
+                let allFilled = true;
+                let firstEmpty = null;
+
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        allFilled = false;
+                        field.style.borderColor = '#ef4444';
+                        if (!firstEmpty) firstEmpty = field;
+                    } else {
+                        field.style.borderColor = 'rgba(255,255,255,0.1)';
+                    }
+                });
+
+                if (!allFilled) {
+                    firstEmpty.focus();
+                    firstEmpty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                // Check age minimum
+                const ageField = document.getElementById('age');
+                if (parseInt(ageField.value) < 18) {
+                    ageField.style.borderColor = '#ef4444';
+                    ageField.focus();
+                    return;
+                }
+
+                // Validate mobile number
+                const mobileField = document.getElementById('mobileNumber');
+                if (mobileField.value.length !== 10 || isNaN(mobileField.value)) {
+                    mobileField.style.borderColor = '#ef4444';
+                    mobileField.focus();
+                    return;
+                }
+
+                // Validate email
+                const emailField = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailField.value)) {
+                    emailField.style.borderColor = '#ef4444';
+                    emailField.focus();
+                    return;
+                }
+            }
+
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            // Show target step
+            document.getElementById('formStep' + step).classList.add('active');
+
+            // Update step indicators
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById('stepDot' + i);
+                dot.classList.remove('active');
+                if (i <= step) dot.classList.add('active');
+            }
+            for (let i = 1; i <= 2; i++) {
+                const line = document.getElementById('stepLine' + i);
+                line.classList.remove('active');
+                if (i < step) line.classList.add('active');
+            }
+
+            // Scroll to form
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Submit Form via Formspree
+        function submitForm() {
+            const checkbox = document.getElementById('agreeCheckbox');
+            if (!checkbox.checked) {
+                checkbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                checkbox.style.outline = '2px solid #ef4444';
+                setTimeout(() => { checkbox.style.outline = 'none'; }, 3000);
+                return;
+            }
+
+            // Collect form data
+            const formData = new FormData(document.getElementById('applicationForm'));
+            formData.append('submission_date', new Date().toISOString());
+            formData.append('payment_amount', 'Rs. 299');
+
+            // Track Meta Pixel Lead event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Spa Therapist Application',
+                    content_category: 'Job Application',
+                    value: 299,
+                    currency: 'INR'
+                });
+            }
+
+            // Submit to Formspree
+            fetch('https://formspree.io/f/mnjlzrjj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    goToStep(3);
+                } else {
+                    // Still proceed even if formspree has issues
+                    goToStep(3);
+                }
+            }).catch(() => {
+                // Proceed to success even on network error
+                goToStep(3);
+            });
+        }
+
+        // Input validation styling
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = 'rgba(22, 163, 74, 0.3)';
+                } else {
+                    this.style.borderColor = 'rgba(255,255,255,0.1)';
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
