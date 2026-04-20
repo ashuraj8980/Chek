@@ -1,36 +1,50 @@
-<div style="text-align: center; margin-top: 20px;">
-    <button id="direct-pay-now" style="background: #3399cc; color: #fff; padding: 12px 25px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-weight: 600;">
-        Pay Now
-    </button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Check - RealMeet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+        .payment-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 350px;
+        }
+        h2 { color: #333; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 25px; }
+    </style>
+</head>
+<body>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <div class="payment-card">
+        <h2>Pay & Connect</h2>
+        <p>Click the button below to test your Razorpay integration.</p>
 
-<script>
-    document.getElementById('direct-pay-now').onclick = function(e) {
-        var options = {
-            "key": "YOUR_KEY_ID_HERE", // 👈 Yahan apni API Key dalein (rzp_test_...)
-            "amount": "10000", // Amount paise mein (10000 = ₹100)
-            "currency": "INR",
-            "name": "RealMeet",
-            "description": "Fast Payment",
-            
-            // Ye part details mangna band kar dega (Skip Step)
-            "prefill": {
-                "name": "Customer", 
-                "email": "customer@example.com",
-                "contact": "9999999999"
-            },
-            
-            "theme": { "color": "#3399cc" },
-            
-            "handler": function (response) {
-                alert("Payment Successful! ID: " + response.razorpay_payment_id);
-            }
-        };
+        <form>
+            <script 
+                src="https://checkout.razorpay.com/v1/payment-button.js" 
+                data-payment_button_id="pl_SfnTnRnMq2ntKw" 
+                async>
+            </script> 
+        </form>
 
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
-        e.preventDefault();
-    };
-</script>
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            Note: User details will be required for this button.
+        </div>
+    </div>
+
+</body>
+</html>
